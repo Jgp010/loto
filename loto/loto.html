@@ -1,0 +1,49 @@
+<!DOCTYPE   html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!--使用 jQuery 來做 Ajax 請求--><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <form action="loto.php" method="post">
+        <select name="year" id="year">
+            <option value="107">107</option>
+            <option value="108">108</option>
+            <option value="109">109</option>
+            <option value="110">110</option>
+            <option value="111">111</option>
+            <option value="112">112</option>
+        </select>年
+        <select name="monuth" id="monuth">
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">003</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>月<input type="submit" value="查找"  />
+    </form>
+    <script>
+        $('form').on('submit',function(){
+            $.ajax({
+            url: "loto.php",
+            data:$('form').serialize(),
+            type:"POST",
+            dataType:'text',
+            success: function(message){
+                document.getElementById("result").innerHTML=message;
+            },
+        });
+        return false;
+        });
+    </script>
+     <!--return false;的用意讓頁面不進行跳轉 -->
+        <div id="result"></div>
+    </body>
+</html>
