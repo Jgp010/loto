@@ -56,7 +56,7 @@ ops.add_experimental_option('detach',True)#brower與程式分離,才不會程式
 brower=webdriver.Chrome(service=service,options=ops)
 
 
-conn=mysql.connect(host='localhost',user='yy010',password='dkgbfdoyyy010',database='cloud')
+conn=mysql.connect(host='localhost',user='user',password='123456',database='cloud')
 cursor=conn.cursor()
 cmd="insert into 大樂透649彙整 (期數,開獎日期,截止日期,銷售金額,獎金總額,n1,n2,n3,n4,n5,n6,spn,累計至下次) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
 for i in range(107,datetime.datetime.now().year+1-1911):
