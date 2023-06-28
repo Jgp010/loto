@@ -4,7 +4,7 @@
     $year+=1911;
     $monuth=$_POST["monuth"];
    
-    $conn=new mysqli("localhost","yy010","dkgbfdoyyy010","cloud");
+    $conn=new mysqli("localhost","user","123456","cloud");
     $cmd_add=
     $cmd="select * from 大樂透649彙整  where 開獎日期 like '{$year}-{$monuth}-%'";
     $re=$conn->query($cmd);
